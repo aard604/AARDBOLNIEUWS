@@ -4,41 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aardbol Nieuws - Het Laatste Wereldnieuws</title>
-    <!-- Officiële en stabiele Bootstrap CDN links -->
-    <link href="https://jsdelivr.net" rel="stylesheet" crossorigin="anonymous">
-    <link href="https://jsdelivr.net" rel="stylesheet" crossorigin="anonymous">
+    
+    <!-- Gegarandeerd werkende opmaakbestanden voor GitHub Pages -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
     <style>
-        /* Uniforme donkere achtergrond voor de hele pagina */
+        /* Handmatige kleurenopmaak om weigering door de browser te voorkomen */
         body {
             background-color: #1a1d20 !important;
             color: #f8f9fa !important;
+            font-family: system-ui, -apple-system, sans-serif;
         }
-        /* Strakke navigatiebalk zonder extra randen */
         .custom-nav { 
             background-color: #212529 !important; 
             padding: 12px 0 !important;
+            border-bottom: 1px solid #373b3e;
         }
         .custom-nav .navbar-brand { 
             color: #25d366 !important; 
             font-weight: 800 !important; 
             font-size: 1.4rem !important;
+            text-decoration: none;
         }
         .custom-nav .nav-link { 
             color: #ffffff !important; 
             font-weight: 600 !important; 
             font-size: 1.1rem !important;
+            text-decoration: none;
         }
-        .custom-nav .nav-link:hover { 
-            color: #25d366 !important; 
+        .ticker-wrapper { 
+            background-color: #dc3545; 
+            color: white; 
+            overflow: hidden; 
+            white-space: nowrap; 
+            padding: 8px 0; 
+            font-weight: bold; 
         }
-        /* Bewegende rode nieuwsbalk */
-        .ticker-wrapper { background-color: #dc3545; color: white; overflow: hidden; white-space: nowrap; padding: 8px 0; font-weight: bold; }
-        .ticker-text { display: inline-block; animation: ticker 25s linear infinite; padding-left: 100%; }
-        @keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
-        /* Mascotte-afbeelding */
-        .mascotte-img { max-width: 100%; height: auto; border-radius: 50%; }
-        /* Facebook container passend in het design */
-        .fb-container { background: #212529; border-radius: 8px; padding: 15px; display: inline-block; }
+        .ticker-text { 
+            display: inline-block; 
+            animation: ticker 25s linear infinite; 
+            padding-left: 100%; 
+        }
+        @keyframes ticker { 
+            0% { transform: translate3d(0, 0, 0); } 
+            100% { transform: translate3d(-100%, 0, 0); } 
+        }
+        .hero-section {
+            background-color: #212529;
+            padding: 3rem 0;
+            border-bottom: 1px solid #373b3e;
+        }
+        .mascotte-img { 
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 50%; 
+        }
+        .fb-container { 
+            background: #212529; 
+            border-radius: 8px; 
+            padding: 15px; 
+            display: inline-block; 
+            border: 1px solid #373b3e;
+        }
     </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -47,8 +75,8 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://facebook.net"></script>
 
-    <!-- Heldere en Goed Leesbare Navigatiebalk -->
-    <nav class="navbar navbar-expand-lg navbar-dark custom-nav sticky-top border-bottom border-secondary">
+    <!-- Gecorrigeerde Navigatiebalk -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-nav sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">🌍 AARDBOL NIEUWS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -68,19 +96,19 @@
         <div class="ticker-text">⚠️ BREAKING NEWS: Volg Aardbol Nieuws nu ook live via onze officiële Facebook-pagina voor snelle updates! ---</div>
     </div>
 
-    <!-- Welkomstsectie (Geïntegreerd in de achtergrond) -->
-    <div class="py-5 border-bottom border-secondary">
+    <!-- Welkomstsectie met je echte mascotte -->
+    <div class="hero-section">
         <div class="container">
             <div class="row align-items-center text-center text-md-start">
                 <div class="col-md-8 py-2">
-                    <h1 class="display-4 fw-bold">Blijf op de hoogte met Aardbol Nieuws</h1>
-                    <p class="lead opacity-75">Uw dagelijkse premium bron voor het belangrijkste nieuws over onze planeet, wetenschap en natuur met een Surinaams hart.</p>
+                    <h1 class="display-4 fw-bold text-white">Blijf op de hoogte met Aardbol Nieuws</h1>
+                    <p class="lead text-light opacity-75">Uw dagelijkse premium bron voor het belangrijkste nieuws over onze planeet, wetenschap en natuur met een Surinaams hart.</p>
                     <a href="https://facebook.com" target="_blank" class="btn btn-primary btn-lg px-4 fw-bold shadow"><i class="bi bi-facebook me-2"></i>Bezoek onze Facebook</a>
                 </div>
-                <!-- Mascotte rechtstreeks geladen via een stabiele link -->
+                <!-- Je prachtige mascotte direct ingeladen via imgur/postimg spiegeling -->
                 <div class="col-md-4 text-center py-2">
                     <img src="https://ibb.co" alt="Aardbol Nieuws Mascotte" class="shadow border border-success border-3 mascotte-img bg-white" width="220" height="220">
-                    <div class="mt-2 text-success fw-bold">Onze Officiële Mascotte! 🌍✨</div>
+                    <div class="mt-2 text-success fw-bold small">Onze Officiële Mascotte! 🌍✨</div>
                 </div>
             </div>
         </div>
@@ -111,19 +139,19 @@
         <h2 class="text-center mb-4 fw-bold text-success">✍️ Tip de Redactie / Contact</h2>
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
-                <form action="https://formspree.io" method="POST" class="card p-4 shadow border-secondary bg-transparent">
+                <form action="https://formspree.io" method="POST" class="card p-4 shadow border-secondary bg-dark text-light">
                     <input type="hidden" name="_to" value="info.aardbolnieuws@gmail.com">
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Naam</label>
-                        <input type="text" name="naam" class="form-control bg-dark text-light border-secondary" placeholder="Jouw naam">
+                        <input type="text" name="naam" class="form-control bg-secondary text-white border-secondary" placeholder="Jouw naam">
                     </div>
                     <div class="mb-3">
                         <label class="form-label fw-semibold">E-mailadres</label>
-                        <input type="email" name="_replyto" class="form-control bg-dark text-light border-secondary" placeholder="naam@voorbeeld.com" required>
+                        <input type="email" name="_replyto" class="form-control bg-secondary text-white border-secondary" placeholder="naam@voorbeeld.com" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Nieuwstip</label>
-                        <textarea name="bericht" class="form-control bg-dark text-light border-secondary" rows="4" placeholder="Deel hier uw nieuws..." required></textarea>
+                        <textarea name="bericht" class="form-control bg-secondary text-white border-secondary" rows="4" placeholder="Deel hier uw nieuws..." required></textarea>
                     </div>
                     <button type="submit" class="btn btn-success w-100 fw-bold text-dark">Verstuur naar Redactie</button>
                 </form>
@@ -131,13 +159,14 @@
         </div>
     </div>
 
-    <!-- Nette, simpele footer -->
+    <!-- Nette footer -->
     <footer class="text-white text-center py-4 mt-auto border-top border-secondary" style="background-color: #212529;">
         <div class="container">
             <p class="mb-0">&copy; 2026 Aardbol Nieuws. Alle rechten voorbehouden.</p>
         </div>
     </footer>
 
-    <script src="https://jsdelivr.net" crossorigin="anonymous"></script>
+    <!-- Gecorrigeerde JS link voor werkende knoppen -->
+    <script src="https://cloudflare.com"></script>
 </body>
 </html>
