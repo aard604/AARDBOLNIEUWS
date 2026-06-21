@@ -13,20 +13,34 @@
         @keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
         .mascotte-img { transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .mascotte-img:hover { transform: scale(1.08) rotate(3deg); box-shadow: 0 10px 20px rgba(25, 135, 84, 0.4) !important; }
-        /* Zorgt dat de Facebook-feed netjes past op mobiel */
         .fb-container { background: #212529; border-radius: 8px; padding: 15px; border: 1px solid #373b3e; }
+        
+        /* Herstelde styling voor de navigatiebalk lezers */
+        .custom-nav { background-color: #1a1d20 !important; }
+        .custom-nav .navbar-brand { color: #198754 !important; font-weight: bold; }
+        .custom-nav .nav-link { color: #f8f9fa !important; font-weight: 500; }
+        .custom-nav .nav-link:hover { color: #198754 !important; }
     </style>
 </head>
 <body class="d-flex flex-column min-vh-100 bg-dark text-light">
 
-    <!-- Facebook JavaScript SDK (Nodig om de feed te laden) -->
+    <!-- Facebook JavaScript SDK -->
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://facebook.net"></script>
 
-    <!-- Navigatiebalk -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary sticky-top border-bottom border-secondary">
+    <!-- Gecorrigeerde en Goed Leesbare Navigatiebalk -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-nav sticky-top border-bottom border-secondary shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold text-success" href="#">🌍 AARDBOL NIEUWS</a>
+            <a class="navbar-brand fs-4" href="#">🌍 AARDBOL NIEUWS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link px-3" href="#hoofdnieuws">Hoofdnieuws</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#contact">Tip de Redactie</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -53,12 +67,11 @@
     </div>
 
     <!-- SECTIE: Live Facebook Nieuws Feed -->
-    <div class="container my-5 py-4">
+    <div class="container my-5 py-4" id="hoofdnieuws">
         <h2 class="text-center mb-4 fw-bold text-success">📰 Ons Laatste Nieuwsonline</h2>
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
                 <div class="fb-container shadow">
-                    <!-- Hier wordt jouw live Facebook-feed ingeladen -->
                     <div class="fb-page" 
                         data-href="https://facebook.com" 
                         data-tabs="timeline" 
