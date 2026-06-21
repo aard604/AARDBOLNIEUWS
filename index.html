@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aardbol Nieuws - Het Laatste Wereldnieuws</title>
     <!-- Bootstrap CSS Link -->
     <link href="https://jsdelivr.net" rel="stylesheet">
+    <style>
+        .carousel-item {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+    </style>
 </head>
-<body class="d-flex flex-column min-vh-100 bg-light">
+<body class="d-flex flex-column min-vh-100 bg-dark text-light">
 
     <!-- Navigatiebalk -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary sticky-top border-bottom border-secondary">
         <div class="container">
-            <a class="navbar-brand fw-bold text-primary" href="#">🌍 AARDBOL NIEUWS</a>
+            <a class="navbar-brand fw-bold text-success" href="#">🌍 AARDBOL NIEUWS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#projecten">Hoofdnieuws</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hoofdnieuws">Hoofdnieuws</a></li>
                     <li class="nav-item"><a class="nav-link" href="#tarieven">Abonnementen</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">Veelgestelde Vragen</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Tip de Redactie</a></li>
@@ -28,46 +33,46 @@
     </nav>
 
     <!-- Welkomstsectie (Hero) -->
-    <div class="bg-white p-5 text-center border-bottom shadow-sm">
+    <div class="bg-body-tertiary p-5 text-center border-bottom border-secondary shadow-sm">
         <div class="container py-4">
-            <h1 class="display-4 fw-bold text-dark">Blijf op de hoogte met Aardbol Nieuws</h1>
-            <p class="lead text-muted">Uw dagelijkse bron voor het belangrijkste nieuws over onze planeet, wetenschap en natuur.</p>
-            <a href="#projecten" class="btn btn-primary btn-lg px-4 gap-3">Lees het Nieuws</a>
+            <h1 class="display-4 fw-bold text-light">Blijf op de hoogte met Aardbol Nieuws</h1>
+            <p class="lead text-muted">Uw dagelijkse premium bron voor het belangrijkste nieuws over onze planeet, wetenschap en natuur.</p>
+            <a href="#hoofdnieuws" class="btn btn-success btn-lg px-4 gap-3 fw-bold">Lees het Nieuws</a>
         </div>
     </div>
 
-    <!-- Sectie 2: Afbeeldingen-slider (Hoofdnieuws) -->
-    <div class="container my-5 py-4" id="projecten">
-        <h2 class="text-center mb-4 fw-bold">🔥 Belangrijkste Nieuwskoppen</h2>
+    <!-- Sectie: Afbeeldingen-slider (Hoofdnieuws) -->
+    <div class="container my-5 py-4" id="hoofdnieuws">
+        <h2 class="text-center mb-4 fw-bold text-success">🔥 Belangrijkste Nieuwskoppen</h2>
         <div id="projectenCarousel" class="carousel slide shadow rounded overflow-hidden" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#projectenCarousel" data-bs-slide-to="0" class="active"></button>
                 <button type="button" data-bs-target="#projectenCarousel" data-bs-slide-to="1"></button>
                 <button type="button" data-bs-target="#projectenCarousel" data-bs-slide-to="2"></button>
             </div>
-            <div class="carousel-inner bg-dark text-white text-center" style="height: 400px;">
+            <div class="carousel-inner text-white text-center" style="height: 400px;">
                 <!-- Slide 1 -->
-                <div class="carousel-item active h-100 pt-5">
+                <div class="carousel-item active h-100">
                     <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5">
-                        <span class="badge bg-danger mb-2">WETENSCHAP</span>
-                        <h5 class="display-6 fw-bold">Aarde vergaat wellicht niet als de zon sterft</h5>
-                        <p class="lead">Een nieuwe studie toont aan dat onze planeet de dood van de zon mogelijk overleeft.</p>
+                        <span class="badge bg-danger mb-3 px-3 py-2 fs-6">WETENSCHAP</span>
+                        <h3 class="display-6 fw-bold">Aarde vergaat wellicht niet als de zon sterft</h3>
+                        <p class="lead text-muted max-width-700">Een nieuwe astronomische studie toont aan dat onze planeet de definitieve dood van de zon mogelijk overleeft [1].</p>
                     </div>
                 </div>
                 <!-- Slide 2 -->
-                <div class="carousel-item h-100 pt-5">
+                <div class="carousel-item h-100">
                     <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5">
-                        <span class="badge bg-warning text-dark mb-2">RUIMTEVAART</span>
-                        <h5 class="display-6 fw-bold">Ariane 6 vestigt nieuw Europees gewichtsrecord</h5>
-                        <p class="lead">De zware Europese draagraket heeft succesvol 36 Amazon Leo-satellieten in een baan om de aarde gebracht [1].</p>
+                        <span class="badge bg-warning text-dark mb-3 px-3 py-2 fs-6">RUIMTEVAART</span>
+                        <h3 class="display-6 fw-bold">Ariane 6 vestigt zwaar Europees gewichtsrecord</h3>
+                        <p class="lead text-muted">De nieuwe Europese draagraket heeft succesvol 36 zware Amazon Leo-satellieten tegelijk in een stabiele baan gebracht.</p>
                     </div>
                 </div>
                 <!-- Slide 3 -->
-                <div class="carousel-item h-100 pt-5">
+                <div class="carousel-item h-100">
                     <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5">
-                        <span class="badge bg-info mb-2">KLIMAAT</span>
-                        <h5 class="display-6 fw-bold">Klimaatfenomeen El Niño officieel teruggekeerd</h5>
-                        <p class="lead">Satellietwaarnemingen bevestigen de terugkeer en versterking van El Niño met wereldwijde gevolgen.</p>
+                        <span class="badge bg-info text-dark mb-3 px-3 py-2 fs-6">KLIMAAT</span>
+                        <h3 class="display-6 fw-bold">Klimaatfenomeen El Niño officieel teruggekeerd</h3>
+                        <p class="lead text-muted">Nieuwe satellietmetingen bevestigen een snelle versterking van El Niño met directe wereldwijde gevolgen voor het weer.</p>
                     </div>
                 </div>
             </div>
@@ -80,90 +85,74 @@
         </div>
     </div>
 
-    <!-- Sectie 3: Prijzentabel (Abonnementen) -->
+    <!-- Sectie: Prijzentabel (Abonnementen) -->
     <div class="container my-5 py-4" id="tarieven">
-        <h2 class="text-center mb-4 fw-bold">📰 Kies uw Nieuws-Abonnement</h2>
+        <h2 class="text-center mb-4 fw-bold text-success">📰 Kies uw Nieuws-Abonnement</h2>
         <div class="row text-center align-items-center">
             <!-- Basis -->
             <div class="col-md-4 mb-4">
-                <div class="card p-4 shadow-sm border-0">
+                <div class="card p-4 shadow-sm border-secondary bg-body-tertiary">
                     <h4 class="fw-bold text-muted">Digitaal Basis</h4>
                     <h2 class="my-3 fw-bold">€4,50<span class="fs-6 text-muted">/maand</span></h2>
-                    <ul class="list-unstyled my-4 text-secondary">
-                        <li class="mb-2">Onbeperkt online artikelen lezen</li>
-                        <li class="mb-2">Toegang op 1 apparaat</li>
-                        <li class="mb-2">Inclusief wekelijkse nieuwsbrief</li>
+                    <ul class="list-unstyled my-4">
+                        <li class="mb-2 text-secondary">Onbeperkt online artikelen lezen</li>
+                        <li class="mb-2 text-secondary">Toegang op 1 apparaat</li>
+                        <li class="mb-2 text-secondary">Inclusief wekelijkse nieuwsbrief</li>
                     </ul>
-                    <button class="btn btn-outline-primary w-100 fw-bold">Kies Basis</button>
+                    <button class="btn btn-outline-success w-100 fw-bold">Kies Basis</button>
                 </div>
             </div>
             <!-- Premium (Populair) -->
             <div class="col-md-4 mb-4">
-                <div class="card p-4 shadow border-primary border-2 position-relative bg-white">
-                    <div class="badge bg-primary text-white position-absolute top-0 start-50 translate-middle px-3 py-2 rounded-pill fw-bold">Meest gekozen</div>
-                    <h4 class="fw-bold text-primary mt-2">Digitaal Premium</h4>
+                <div class="card p-4 shadow border-success border-2 position-relative bg-body-tertiary">
+                    <div class="badge bg-success text-dark position-absolute top-0 start-50 translate-middle px-3 py-2 rounded-pill fw-bold">Meest gekozen</div>
+                    <h4 class="fw-bold text-success mt-2">Digitaal Premium</h4>
                     <h2 class="my-3 fw-bold">€7,50<span class="fs-6 text-muted">/maand</span></h2>
-                    <ul class="list-unstyled my-4 text-secondary">
+                    <ul class="list-unstyled my-4">
                         <li class="mb-2"><strong>Onbeperkt toegang op 4 apparaten</strong></li>
-                        <li class="mb-2">Exclusieve diepte-interviews</li>
-                        <li class="mb-2">Volledig advertentievrij lezen</li>
+                        <li class="mb-2 text-secondary">Exclusieve diepte-interviews</li>
+                        <li class="mb-2 text-secondary">Volledig advertentievrij lezen</li>
                     </ul>
-                    <button class="btn btn-primary w-100 shadow-sm fw-bold">Kies Premium</button>
+                    <button class="btn btn-success w-100 shadow-sm fw-bold text-dark">Kies Premium</button>
                 </div>
             </div>
-            <!-- Zakelijk -->
+            <!-- Zaterdag -->
             <div class="col-md-4 mb-4">
-                <div class="card p-4 shadow-sm border-0">
+                <div class="card p-4 shadow-sm border-secondary bg-body-tertiary">
                     <h4 class="fw-bold text-muted">Zaterdag + Digitaal</h4>
                     <h2 class="my-3 fw-bold">€12,50<span class="fs-6 text-muted">/maand</span></h2>
-                    <ul class="list-unstyled my-4 text-secondary">
-                        <li class="mb-2">Alles van Digitaal Premium</li>
-                        <li class="mb-2">Dikke zaterdagkrant op de mat</li>
-                        <li class="mb-2">Inclusief digitaal archief vanaf 2000</li>
+                    <ul class="list-unstyled my-4">
+                        <li class="mb-2 text-secondary">Alles van Digitaal Premium</li>
+                        <li class="mb-2 text-secondary">Dikke zaterdagkrant op de mat</li>
+                        <li class="mb-2 text-secondary">Inclusief digitaal archief vanaf 2000</li>
                     </ul>
-                    <button class="btn btn-outline-primary w-100 fw-bold">Kies Weekend</button>
+                    <button class="btn btn-outline-success w-100 fw-bold">Kies Weekend</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Sectie 4: FAQ (Veelgestelde Vragen) -->
+    <!-- Sectie: FAQ (Veelgestelde Vragen) -->
     <div class="container my-5 py-4" id="faq">
-        <h2 class="text-center mb-4 fw-bold">🙋 Veelgestelde Vragen</h2>
-        <div class="accordion shadow-sm rounded overflow-hidden" id="faqAccordion">
-            <!-- Vraag 1 -->
-            <div class="accordion-item border-0 border-bottom">
+        <h2 class="text-center mb-4 fw-bold text-success">🙋 Veelgestelde Vragen</h2>
+        <div class="accordion shadow-sm rounded overflow-hidden border border-secondary" id="faqAccordion">
+            <div class="accordion-item bg-body-tertiary border-secondary">
                 <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                    <button class="accordion-button bg-body-tertiary text-light fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
                         Hoe kan ik mijn abonnement opzeggen?
                     </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body bg-white text-muted">
-                        U kunt uw abonnement op elk gewenst moment eenvoudig en maandelijks online opzeggen via uw profielinstellingen.
+                    <div class="accordion-body text-muted">
+                        U kunt uw abonnement op elk gewenst moment eenvoudig en maandelijks online opzeggen via uw persoonlijke profielinstellingen.
                     </div>
                 </div>
             </div>
-            <!-- Vraag 2 -->
-            <div class="accordion-item border-0">
+            <div class="accordion-item bg-body-tertiary border-0">
                 <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                    <button class="accordion-button collapsed bg-body-tertiary text-light fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
                         Bieden jullie ook een studentenkorting aan?
                     </button>
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body bg-white text-muted">
-                        Ja! Studenten krijgen op vertoon van een geldige studentenpas 50% korting op al onze digitale abonnementen.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sectie 1: Contactformulier -->
-    <div class="container my-5 py-4 mb-5" id="contact">
-        <h2 class="text-center mb-4 fw-bold">✍️ Tip de Redactie / Contact</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <form action="https://formspree.io" method="POST" class="card p-4 shadow-sm border-0">
-                    <div class="mb-3">
+                    <div class="accordion-body text-muted">
