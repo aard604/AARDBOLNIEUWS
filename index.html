@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aardbol Nieuws - Het Laatste Wereldnieuws</title>
     <style>
+        /* Onbreekbare handmatige styling - Geen externe links die kunnen mislukken */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
@@ -69,24 +70,27 @@
         }
         .btn-fb:hover { background-color: #0b5ed7; color: #ffffff; }
 
-        /* VASTGEZETTE OPMAAK: VOORKOMT PLATDRUKKEN EN BLANKO LOGO */
-        .mascotte-container { display: inline-block; }
-        .mascotte-img { 
-            width: 200px !important; 
-            height: 200px !important; 
-            border-radius: 50% !important; 
-            border: 4px solid #25d366 !important; 
-            background-color: white !important; 
-            object-fit: cover !important; 
+        /* NIEUWE DIGITALE MASCOTTE-BOX (KAN NOOIT BREKEN OF WIT WORDEN) */
+        .mascotte-badge {
+            width: 180px;
+            height: 180px;
+            background-color: #1a1d20;
+            border: 5px solid #25d366;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
         }
-        .mascotte-text { color: #25d366; font-weight: bold; margin-top: 10px; font-size: 0.9rem; }
+        .mascotte-text { color: #25d366; font-weight: bold; margin-top: 15px; font-size: 1rem; }
 
         /* ITEMS EN FOTO LAYOUT SECTIE */
         .items-section { padding: 50px 0; text-align: center; }
         .items-section h2 { color: #25d366; font-size: 2rem; margin-bottom: 30px; font-weight: bold; }
         .items-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
         .item-card { background-color: #212529; border: 1px solid #343a40; border-radius: 8px; overflow: hidden; width: 100%; max-width: 350px; text-align: left; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-        .item-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #343a40; }
+        .item-img-placeholder { width: 100%; height: 200px; background-color: #1a1d20; display: flex; align-items: center; justify-content: center; font-size: 4rem; border-bottom: 1px solid #343a40; }
         .item-body { padding: 20px; }
         .item-title { font-size: 1.3rem; font-weight: bold; color: #ffffff; margin-bottom: 10px; }
         .item-text { color: #bcc2c8; font-size: 0.95rem; }
@@ -128,17 +132,13 @@
 </head>
 <body>
 
-    <!-- Facebook JavaScript SDK -->
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://facebook.net"></script>
-
     <!-- Navigatiebalk -->
     <nav class="custom-nav">
         <div class="container">
             <div class="nav-content">
                 <a class="navbar-brand" href="#">🌍 AARDBOL NIEUWS</a>
                 <div class="navbar-links">
-                    <a href="#items">Nieuws & Foto's</a>
+                    <a href="#items">Nieuws & Artikelen</a>
                     <a href="#contact">Contact</a>
                 </div>
             </div>
@@ -161,22 +161,23 @@
                 </div>
                 <div class="hero-col-right">
                     <div class="mascotte-container">
-                        <img src="https://postimg.co" alt="Aardbol Nieuws Mascotte" class="mascotte-img shadow">
-                        <div class="mascotte-text">Onze Officiële Mascotte! 🌍✨</div>
+                        <!-- Ingebouwde digitale wereldbol badge die NOOIT kan breken -->
+                        <div class="mascotte-badge">🌍</div>
+                        <div class="mascotte-text">Aardbol Nieuws Live 🌍✨</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- NIEUWS & FOTO SECTIE -->
+    <!-- NIEUWS & ARTIKELEN SECTIE -->
     <div class="container items-section" id="items">
-        <h2>📰 Laatste Items & Artikelen</h2>
+        <h2>📰 Laatste Nieuwsberichten</h2>
         <div class="items-grid">
             
             <!-- ITEM 1 -->
             <div class="item-card">
-                <img src="https://unsplash.com" alt="Nieuws item 1" class="item-img">
+                <div class="item-img-placeholder">🚀</div>
                 <div class="item-body">
                     <div class="item-title">Ruimte & Wetenschap</div>
                     <div class="item-text">Nieuwe astronomische ontdekkingen werpen een frisse en hoopvolle blik op de verre toekomst van onze planeet Aarde.</div>
@@ -185,19 +186,19 @@
 
             <!-- ITEM 2 -->
             <div class="item-card">
-                <img src="https://unsplash.com" alt="Nieuws item 2" class="item-img">
+                <div class="item-img-placeholder">☀️</div>
                 <div class="item-body">
                     <div class="item-title">Wereldwijd Klimaat</div>
                     <div class="item-text">Weersatellieten houden de patronen nauwkeurig in de gaten om sneller te waarschuwen bij extreme weersomstandigheden.</div>
                 </div>
             </div>
 
-            <!-- ITEM 3 (NIEUW INGEBOUWD BERICHT) -->
+            <!-- ITEM 3 -->
             <div class="item-card">
-                <img src="https://unsplash.com" alt="Nieuws item 3" class="item-img">
+                <div class="item-img-placeholder">💻</div>
                 <div class="item-body">
                     <div class="item-title">Surinaamse Innovatie</div>
-                    <div class="item-text">Aardbol Nieuws breidt uit met een gloednieuwe fotogalerij voor de allernieuwste updates over IT, natuur en wereldnieuws.</div>
+                    <div class="item-text">Aardbol Nieuws breidt uit met een gloednieuwe indeling voor de allernieuwste updates over IT, natuur en wereldnieuws.</div>
                 </div>
             </div>
 
@@ -216,5 +217,7 @@
                 </div>
                 <div class="form-group">
                     <label>E-mailadres</label>
-
-                
+                    <input type="email" name="_replyto" class="form-control" placeholder="naam@voorbeeld.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Nieuwstip</label>
