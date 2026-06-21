@@ -6,7 +6,7 @@
     <title>Aardbol Nieuws - Het Laatste Wereldnieuws</title>
     <!-- Bootstrap CSS Link -->
     <link href="https://jsdelivr.net" rel="stylesheet">
-    <!-- Bootstrap Icons Link (voor social media logo's) -->
+    <!-- Bootstrap Icons Link -->
     <link href="https://jsdelivr.net" rel="stylesheet">
     <style>
         .carousel-item {
@@ -15,7 +15,6 @@
             background-position: center;
             position: relative;
         }
-        /* Donkere laag over afbeeldingen voor betere tekst-leesbaarheid */
         .carousel-item::before {
             content: "";
             position: absolute;
@@ -25,7 +24,6 @@
         .carousel-caption {
             z-index: 2;
         }
-        /* Stijl voor de bewegende breaking news balk */
         .ticker-wrapper {
             background-color: #dc3545;
             color: white;
@@ -43,6 +41,13 @@
             0% { transform: translate3d(0, 0, 0); }
             100% { transform: translate3d(-100%, 0, 0); }
         }
+        /* Stijl voor de mascotte-animatie */
+        .mascotte-img {
+            transition: transform 0.3s ease;
+        }
+        .mascotte-img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
     </style>
 </head>
 <body class="d-flex flex-column min-vh-100 bg-dark text-light">
@@ -57,8 +62,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#hoofdnieuws">Hoofdnieuws</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#laatste-nieuws">Laatste Nieuws</a></li>
                     <li class="nav-item"><a class="nav-link" href="#tarieven">Abonnementen</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faq">Veelgestelde Vragen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Tip de Redactie</a></li>
                 </ul>
             </div>
@@ -68,21 +74,32 @@
     <!-- Breaking News Balk -->
     <div class="ticker-wrapper shadow-sm">
         <div class="ticker-text">
-            ⚠️ BREAKING NEWS: Klimaatwetenschappers melden versnelde terugkeer van El Niño met directe wereldwijde impact --- Astronomische ontdekking geeft nieuwe hoop voor overleving van de aarde bij afsterven zon --- Ariane 6 vestigt nieuw Europees record met succesvolle lancering van 36 Amazon-satellieten ---
+            ⚠️ BREAKING NEWS: Klimaatwetenschappers melden versnelde terugkeer van El Niño met directe wereldwijde impact --- Astronomische ontdekking geeft Formatting nieuwe hoop voor overleving van de aarde bij afsterven zon --- Ariane 6 vestigt nieuw Europees record met succesvolle lancering van 36 Amazon-satellieten ---
         </div>
     </div>
 
-    <!-- Welkomstsectie (Hero) -->
-    <div class="bg-body-tertiary p-5 text-center border-bottom border-secondary shadow-sm">
-        <div class="container py-4">
-            <h1 class="display-4 fw-bold text-light">Blijf op de hoogte met Aardbol Nieuws</h1>
-            <p class="lead text-muted">Uw dagelijkse premium bron voor het belangrijkste nieuws over onze planeet, wetenschap en natuur.</p>
-            <a href="#hoofdnieuws" class="btn btn-success btn-lg px-4 gap-3 fw-bold">Lees het Nieuws</a>
+    <!-- Welkomstsectie (Hero) met Mascotte -->
+    <div class="bg-body-tertiary p-5 border-bottom border-secondary shadow-sm">
+        <div class="container">
+            <div class="row align-items-center text-center text-md-start">
+                <div class="col-md-8 py-2">
+                    <h1 class="display-4 fw-bold text-light">Blijf op de hoogte met Aardbol Nieuws</h1>
+                    <p class="lead text-muted">Uw dagelijkse premium bron voor het belangrijkste nieuws over onze planeet, wetenschap en natuur.</p>
+                    <a href="#hoofdnieuws" class="btn btn-success btn-lg px-4 gap-3 fw-bold me-2">Lees Hoofdnieuws</a>
+                    <!-- Jouw Facebook Link hier direct gekoppeld -->
+                    <a href="https://www.facebook.com/share/1BHuFT8Muc/" target="_blank" class="btn btn-outline-primary btn-lg px-4 fw-bold"><i class="bi bi-facebook me-2"></i>Volg ons op Facebook</a>
+                </div>
+                <!-- Mascotte Plek (vervang de link tussen de src='' later door je eigen mascotte-afbeelding) -->
+                <div class="col-md-4 text-center py-2">
+                    <img src="https://placehold.co" alt="Aardbol Nieuws Mascotte" class="rounded-circle shadow border border-success border-3 mascotte-img" width="180" height="180">
+                    <div class="mt-2 text-success fw-bold small">Onze Mascotte! 🌍✨</div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Sectie: Afbeeldingen-slider (Hoofdnieuws met echte foto's) -->
-    <div class="container my-5 py-4" id="hoofdnieuws">
+    <!-- Sectie: Afbeeldingen-slider (Hoofdnieuws) -->
+    <div class="container my-5 py-2" id="hoofdnieuws">
         <h2 class="text-center mb-4 fw-bold text-success">🔥 Belangrijkste Nieuwskoppen</h2>
         <div id="projectenCarousel" class="carousel slide shadow rounded overflow-hidden" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -91,23 +108,20 @@
                 <button type="button" data-bs-target="#projectenCarousel" data-bs-slide-to="2"></button>
             </div>
             <div class="carousel-inner text-white text-center">
-                <!-- Slide 1: Zon/Ster (Wetenschap) -->
                 <div class="carousel-item active" style="background-image: url('https://unsplash.com');">
                     <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5 position-relative carousel-caption">
                         <span class="badge bg-danger mb-3 px-3 py-2 fs-6">WETENSCHAP</span>
                         <h3 class="display-6 fw-bold">Aarde vergaat wellicht niet als de zon sterft</h3>
-                        <p class="lead text-light max-width-700">Een nieuwe astronomische studie toont aan dat onze planeet de definitieve dood van de zon mogelijk overleeft.</p>
+                        <p class="lead text-light">Een nieuwe astronomische studie toont aan dat onze planeet de definitieve dood van de zon mogelijk overleeft.</p>
                     </div>
                 </div>
-                <!-- Slide 2: Raket (Ruimtevaart) -->
                 <div class="carousel-item" style="background-image: url('https://unsplash.com');">
                     <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5 position-relative carousel-caption">
                         <span class="badge bg-warning text-dark mb-3 px-3 py-2 fs-6">RUIMTEVAART</span>
                         <h3 class="display-6 fw-bold">Ariane 6 vestigt zwaar Europees gewichtsrecord</h3>
-                        <p class="lead text-light">De nieuwe Europese draagraket heeft succesvol 36 zware Amazon Leo-satellieten tegelijk in een stabiele baan gebracht.</p>
+                        <p class="lead text-light">De nieuwe Europese draagraket heeft succesvol 36 zware Amazon Leo-satellieten tegelijk in een stabile baan gebracht.</p>
                     </div>
                 </div>
-                <!-- Slide 3: Klimaat/Aarde (Klimaat) -->
                 <div class="carousel-item" style="background-image: url('https://unsplash.com');">
                     <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5 position-relative carousel-caption">
                         <span class="badge bg-info text-dark mb-3 px-3 py-2 fs-6">KLIMAAT</span>
@@ -125,41 +139,29 @@
         </div>
     </div>
 
-    <!-- Sectie: Prijzentabel (Abonnementen) -->
-    <div class="container my-5 py-4" id="tarieven">
-        <h2 class="text-center mb-4 fw-bold text-success">📰 Kies uw Nieuws-Abonnement</h2>
-        <div class="row text-center align-items-center">
-            <!-- Basis -->
-            <div class="col-md-4 mb-4">
-                <div class="card p-4 shadow-sm border-secondary bg-body-tertiary">
-                    <h4 class="fw-bold text-muted">Digitaal Basis</h4>
-                    <h2 class="my-3 fw-bold">€4,50<span class="fs-6 text-muted">/maand</span></h2>
-                    <ul class="list-unstyled my-4">
-                        <li class="mb-2 text-secondary">Onbeperkt online artikelen lezen</li>
-                        <li class="mb-2 text-secondary">Toegang op 1 apparaat</li>
-                        <li class="mb-2 text-secondary">Inclusief wekelijkse nieuwsbrief</li>
-                    </ul>
-                    <button class="btn btn-outline-success w-100 fw-bold">Kies Basis</button>
+    <!-- SECTIE: Nieuwsberichten (Jouw artikelen) -->
+    <div class="container my-5 py-4" id="laatste-nieuws">
+        <h2 class="text-center mb-4 fw-bold text-success">📰 Laatste Nieuwsberichten</h2>
+        <div class="row">
+            <!-- Artikel 1 -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 bg-body-tertiary border-secondary shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-success small fw-bold">Natuur & Milieu</span>
+                            <span class="text-muted small">21 juni 2026</span>
+                        </div>
+                        <h4 class="card-title fw-bold">Nieuw herbossingsproject gestart in het Amazonegebied</h4>
+                        <p class="card-text text-secondary">Een internationaal collectief is begonnen met het planten van miljoenen inheemse bomen om aangetaste ecosystemen versneld te herstellen.</p>
+                        <a href="#" class="btn btn-sm btn-outline-success">Lees meer</a>
+                    </div>
                 </div>
             </div>
-            <!-- Premium (Populair) -->
-            <div class="col-md-4 mb-4">
-                <div class="card p-4 shadow border-success border-2 position-relative bg-body-tertiary">
-                    <div class="badge bg-success text-dark position-absolute top-0 start-50 translate-middle px-3 py-2 rounded-pill fw-bold">Meest gekozen</div>
-                    <h4 class="fw-bold text-success mt-2">Digitaal Premium</h4>
-                    <h2 class="my-3 fw-bold">€7,50<span class="fs-6 text-muted">/maand</span></h2>
-                    <ul class="list-unstyled my-4">
-                        <li class="mb-2"><strong>Onbeperkt toegang op 4 apparaten</strong></li>
-                        <li class="mb-2 text-secondary">Exclusieve diepte-interviews</li>
-                        <li class="mb-2 text-secondary">Volledig advertentievrij lezen</li>
-                    </ul>
-                    <button class="btn btn-success w-100 shadow-sm fw-bold text-dark">Kies Premium</button>
-                </div>
-            </div>
-            <!-- Zaterdag -->
-            <div class="col-md-4 mb-4">
-                <div class="card p-4 shadow-sm border-secondary bg-body-tertiary">
-                    <h4 class="fw-bold text-muted">Zaterdag + Digitaal</h4>
-                    <h2 class="my-3 fw-bold">€12,50<span class="fs-6 text-muted">/maand</span></h2>
-                    <ul class="list-unstyled my-4">
-                        <li class="mb-2 text-secondary">Alles van Digitaal Premium</li>
+            <!-- Artikel 2 -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 bg-body-tertiary border-secondary shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-success small fw-bold">Technologie</span>
+                            <span class="text-muted small">20 juni 2026</span>
+                        </div>
