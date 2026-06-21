@@ -6,9 +6,42 @@
     <title>Aardbol Nieuws - Het Laatste Wereldnieuws</title>
     <!-- Bootstrap CSS Link -->
     <link href="https://jsdelivr.net" rel="stylesheet">
+    <!-- Bootstrap Icons Link (voor social media logo's) -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
     <style>
         .carousel-item {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        /* Donkere laag over afbeeldingen voor betere tekst-leesbaarheid */
+        .carousel-item::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .carousel-caption {
+            z-index: 2;
+        }
+        /* Stijl voor de bewegende breaking news balk */
+        .ticker-wrapper {
+            background-color: #dc3545;
+            color: white;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 8px 0;
+            font-weight: bold;
+        }
+        .ticker-text {
+            display: inline-block;
+            animation: ticker 25s linear infinite;
+            padding-left: 100%;
+        }
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
         }
     </style>
 </head>
@@ -32,6 +65,13 @@
         </div>
     </nav>
 
+    <!-- Breaking News Balk -->
+    <div class="ticker-wrapper shadow-sm">
+        <div class="ticker-text">
+            ⚠️ BREAKING NEWS: Klimaatwetenschappers melden versnelde terugkeer van El Niño met directe wereldwijde impact --- Astronomische ontdekking geeft nieuwe hoop voor overleving van de aarde bij afsterven zon --- Ariane 6 vestigt nieuw Europees record met succesvolle lancering van 36 Amazon-satellieten ---
+        </div>
+    </div>
+
     <!-- Welkomstsectie (Hero) -->
     <div class="bg-body-tertiary p-5 text-center border-bottom border-secondary shadow-sm">
         <div class="container py-4">
@@ -41,7 +81,7 @@
         </div>
     </div>
 
-    <!-- Sectie: Afbeeldingen-slider (Hoofdnieuws) -->
+    <!-- Sectie: Afbeeldingen-slider (Hoofdnieuws met echte foto's) -->
     <div class="container my-5 py-4" id="hoofdnieuws">
         <h2 class="text-center mb-4 fw-bold text-success">🔥 Belangrijkste Nieuwskoppen</h2>
         <div id="projectenCarousel" class="carousel slide shadow rounded overflow-hidden" data-bs-ride="carousel">
@@ -50,29 +90,29 @@
                 <button type="button" data-bs-target="#projectenCarousel" data-bs-slide-to="1"></button>
                 <button type="button" data-bs-target="#projectenCarousel" data-bs-slide-to="2"></button>
             </div>
-            <div class="carousel-inner text-white text-center" style="height: 400px;">
-                <!-- Slide 1 -->
-                <div class="carousel-item active h-100">
-                    <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5">
+            <div class="carousel-inner text-white text-center">
+                <!-- Slide 1: Zon/Ster (Wetenschap) -->
+                <div class="carousel-item active" style="background-image: url('https://unsplash.com');">
+                    <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5 position-relative carousel-caption">
                         <span class="badge bg-danger mb-3 px-3 py-2 fs-6">WETENSCHAP</span>
                         <h3 class="display-6 fw-bold">Aarde vergaat wellicht niet als de zon sterft</h3>
-                        <p class="lead text-muted max-width-700">Een nieuwe astronomische studie toont aan dat onze planeet de definitieve dood van de zon mogelijk overleeft [1].</p>
+                        <p class="lead text-light max-width-700">Een nieuwe astronomische studie toont aan dat onze planeet de definitieve dood van de zon mogelijk overleeft.</p>
                     </div>
                 </div>
-                <!-- Slide 2 -->
-                <div class="carousel-item h-100">
-                    <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5">
+                <!-- Slide 2: Raket (Ruimtevaart) -->
+                <div class="carousel-item" style="background-image: url('https://unsplash.com');">
+                    <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5 position-relative carousel-caption">
                         <span class="badge bg-warning text-dark mb-3 px-3 py-2 fs-6">RUIMTEVAART</span>
                         <h3 class="display-6 fw-bold">Ariane 6 vestigt zwaar Europees gewichtsrecord</h3>
-                        <p class="lead text-muted">De nieuwe Europese draagraket heeft succesvol 36 zware Amazon Leo-satellieten tegelijk in een stabiele baan gebracht.</p>
+                        <p class="lead text-light">De nieuwe Europese draagraket heeft succesvol 36 zware Amazon Leo-satellieten tegelijk in een stabiele baan gebracht.</p>
                     </div>
                 </div>
-                <!-- Slide 3 -->
-                <div class="carousel-item h-100">
-                    <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5">
+                <!-- Slide 3: Klimaat/Aarde (Klimaat) -->
+                <div class="carousel-item" style="background-image: url('https://unsplash.com');">
+                    <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5 position-relative carousel-caption">
                         <span class="badge bg-info text-dark mb-3 px-3 py-2 fs-6">KLIMAAT</span>
                         <h3 class="display-6 fw-bold">Klimaatfenomeen El Niño officieel teruggekeerd</h3>
-                        <p class="lead text-muted">Nieuwe satellietmetingen bevestigen een snelle versterking van El Niño met directe wereldwijde gevolgen voor het weer.</p>
+                        <p class="lead text-light">Nieuwe satellietmetingen bevestigen een snelle versterking van El Niño met directe wereldwijde gevolgen voor het weer.</p>
                     </div>
                 </div>
             </div>
@@ -123,36 +163,3 @@
                     <h2 class="my-3 fw-bold">€12,50<span class="fs-6 text-muted">/maand</span></h2>
                     <ul class="list-unstyled my-4">
                         <li class="mb-2 text-secondary">Alles van Digitaal Premium</li>
-                        <li class="mb-2 text-secondary">Dikke zaterdagkrant op de mat</li>
-                        <li class="mb-2 text-secondary">Inclusief digitaal archief vanaf 2000</li>
-                    </ul>
-                    <button class="btn btn-outline-success w-100 fw-bold">Kies Weekend</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sectie: FAQ (Veelgestelde Vragen) -->
-    <div class="container my-5 py-4" id="faq">
-        <h2 class="text-center mb-4 fw-bold text-success">🙋 Veelgestelde Vragen</h2>
-        <div class="accordion shadow-sm rounded overflow-hidden border border-secondary" id="faqAccordion">
-            <div class="accordion-item bg-body-tertiary border-secondary">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button bg-body-tertiary text-light fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                        Hoe kan ik mijn abonnement opzeggen?
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body text-muted">
-                        U kunt uw abonnement op elk gewenst moment eenvoudig en maandelijks online opzeggen via uw persoonlijke profielinstellingen.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item bg-body-tertiary border-0">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed bg-body-tertiary text-light fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                        Bieden jullie ook een studentenkorting aan?
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body text-muted">
