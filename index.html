@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aardbol Nieuws - Het Laatste Wereldnieuws</title>
     <style>
+        /* Volledige handmatige styling - Geen externe afhankelijkheden die kunnen breken */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
@@ -16,7 +17,7 @@
         
         .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 20px; }
         
-        /* Navigatiebalk */
+        /* Gecorrigeerde Navigatiebalk */
         .custom-nav {
             background-color: #212529;
             padding: 15px 0;
@@ -69,19 +70,19 @@
         }
         .btn-fb:hover { background-color: #0b5ed7; color: #ffffff; }
 
-        /* Mascotte */
+        /* VASTGEZETTE OPMAAK: VOORKOMT PLATDRUKKEN EN BLANKO LOGO */
         .mascotte-container { display: inline-block; }
         .mascotte-img { 
             width: 200px !important; 
             height: 200px !important; 
-            border-radius: 50%; 
-            border: 4px solid #25d366; 
-            background-color: white; 
+            border-radius: 50% !important; 
+            border: 4px solid #25d366 !important; 
+            background-color: white !important; 
             object-fit: cover !important; 
         }
         .mascotte-text { color: #25d366; font-weight: bold; margin-top: 10px; font-size: 0.9rem; }
 
-        /* NIEUWE SECTIE: Items & Foto Layout */
+        /* ITEMS EN FOTO LAYOUT SECTIE */
         .items-section { padding: 50px 0; text-align: center; }
         .items-section h2 { color: #25d366; font-size: 2rem; margin-bottom: 30px; font-weight: bold; }
         .items-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
@@ -91,21 +92,35 @@
         .item-title { font-size: 1.3rem; font-weight: bold; color: #ffffff; margin-bottom: 10px; }
         .item-text { color: #bcc2c8; font-size: 0.95rem; }
 
-        /* Facebook-feed sectie */
-        .feed-section { text-align: center; margin: 50px 0; }
-        .feed-section h2 { color: #25d366; font-weight: bold; margin-bottom: 25px; font-size: 2rem; }
-        .fb-container { background: #212529; border-radius: 8px; padding: 20px; border: 1px solid #25d366; display: inline-block; max-width: 100%; }
-        .fb-container a, .fb-container a:visited { color: #25d366; text-decoration: none; font-weight: bold; }
-
         /* Contactformulier */
         .contact-section { margin: 50px 0; }
         .contact-section h2 { text-align: center; color: #25d366; font-weight: bold; margin-bottom: 25px; font-size: 2rem; }
         .contact-card { background-color: #212529; border: 1px solid #343a40; border-radius: 8px; padding: 30px; max-width: 500px; margin: 0 auto; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .form-group { margin-bottom: 20px; text-align: left; }
         .form-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #ffffff; }
-        .form-control { width: 100%; padding: 12px; background-color: #1a1d20; border: 1px solid #495057; border-radius: 5px; color: #ffffff; font-size: 1rem; }
+        
+        .form-control { 
+            width: 100%; 
+            padding: 12px; 
+            background-color: #1a1d20; 
+            border: 1px solid #495057; 
+            border-radius: 5px; 
+            color: #ffffff; 
+            font-size: 1rem; 
+        }
         .form-control:focus { border-color: #25d366; outline: none; }
-        .btn-submit { width: 100%; background-color: #25d366; color: #111111; font-weight: bold; padding: 12px; font-size: 1.1rem; border: none; border-radius: 5px; cursor: pointer; }
+        
+        .btn-submit {
+            width: 100%;
+            background-color: #25d366;
+            color: #111111;
+            font-weight: bold;
+            padding: 12px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
         .btn-submit:hover { background-color: #20b855; }
 
         /* Footer */
@@ -133,7 +148,7 @@
 
     <!-- Breaking News Balk -->
     <div class="ticker-wrapper">
-        <div class="ticker-text">⚠️ BREAKING NEWS: Welkom op de vernieuwde website van Aardbol Nieuws! Blijf kijken voor live updates. ---</div>
+        <div class="ticker-text">⚠️ BREAKING NEWS: Volg Aardbol Nieuws nu ook live via onze officiële Facebook-pagina voor snelle updates! ---</div>
     </div>
 
     <!-- Welkomstsectie -->
@@ -147,7 +162,8 @@
                 </div>
                 <div class="hero-col-right">
                     <div class="mascotte-container">
-                        <img src="https://ibb.co" alt="Aardbol Nieuws Mascotte" class="mascotte-img shadow">
+                        <!-- De onbreekbare, gecorrigeerde live-link naar jouw knipogende mascotte -->
+                        <img src="https://postimg.co" alt="Aardbol Nieuws Mascotte" class="mascotte-img shadow">
                         <div class="mascotte-text">Onze Officiële Mascotte! 🌍✨</div>
                     </div>
                 </div>
@@ -155,14 +171,13 @@
         </div>
     </div>
 
-    <!-- NIEUWE LIVE SECTIE: Items met foto's -->
+    <!-- NIEUWS & FOTO SECTIE -->
     <div class="container items-section" id="items">
         <h2>📰 Laatste Items & Artikelen</h2>
         <div class="items-grid">
             
             <!-- ITEM 1 -->
             <div class="item-card">
-                <!-- Foto van Item 1 -->
                 <img src="https://unsplash.com" alt="Nieuws item 1" class="item-img">
                 <div class="item-body">
                     <div class="item-title">Ruimte & Wetenschap</div>
@@ -172,7 +187,6 @@
 
             <!-- ITEM 2 -->
             <div class="item-card">
-                <!-- Foto van Item 2 -->
                 <img src="https://unsplash.com" alt="Nieuws item 2" class="item-img">
                 <div class="item-body">
                     <div class="item-title">Wereldwijd Klimaat</div>
@@ -200,3 +214,4 @@
                 <div class="form-group">
                     <label>Nieuwstip</label>
                     <textarea name="bericht" class="form-control" rows="4" placeholder="Deel hier uw nieuws..." required></textarea>
+                </div>
