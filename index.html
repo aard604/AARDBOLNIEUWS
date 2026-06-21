@@ -5,78 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aardbol Nieuws - Het Laatste Wereldnieuws</title>
     <style>
-        /* Volledige handmatige styling zonder externe Bootstrap links */
+        /* Volledige handmatige styling - Geen externe afhankelijkheden */
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
-            background-color: #1a1d20;
-            color: #f8f9fa;
+            background-color: #1a1d20 !important;
+            color: #f8f9fa !important;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             line-height: 1.6;
         }
+        
         .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 20px; }
         
-        /* Gecorrigeerde Navigatiebalk */
+        /* Gecorrigeerde Navigatiebalk - ALLES WIT EN GROEN */
         .custom-nav {
-            background-color: #212529;
+            background-color: #212529 !important;
             padding: 15px 0;
             border-bottom: 2px solid #25d366;
-            display: flex;
-            align-items: center;
         }
         .nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-        .navbar-brand { color: #25d366; font-weight: bold; font-size: 1.5rem; text-decoration: none; }
-        .navbar-links a { color: #ffffff; font-weight: bold; text-decoration: none; margin-left: 20px; font-size: 1.1rem; }
-        .navbar-links a:hover { color: #25d366; }
+        
+        .navbar-brand { 
+            color: #25d366 !important; 
+            font-weight: bold; 
+            font-size: 1.6rem; 
+            text-decoration: none !important; 
+        }
+        
+        /* Voorkom paarse links in de balk */
+        .navbar-links a, .navbar-links a:visited { 
+            color: #ffffff !important; 
+            font-weight: bold; 
+            text-decoration: none !important; 
+            margin-left: 20px; 
+            font-size: 1.1rem; 
+        }
+        .navbar-links a:hover { 
+            color: #25d366 !important; 
+        }
 
         /* Rode bewegende nieuwsbalk */
-        .ticker-wrapper { background-color: #dc3545; color: white; overflow: hidden; white-space: nowrap; padding: 10px 0; font-weight: bold; width: 100%; }
-        .ticker-text { display: inline-block; animation: ticker 25s linear infinite; padding-left: 100%; }
+        .ticker-wrapper { background-color: #dc3545 !important; color: #ffffff !important; overflow: hidden; white-space: nowrap; padding: 10px 0; font-weight: bold; width: 100%; }
+        .ticker-text { display: inline-block; animation: ticker 25s linear infinite; padding-left: 100%; color: #ffffff !important; }
         @keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
 
         /* Hoofdsectie (Hero) */
-        .hero-section { background-color: #212529; padding: 50px 0; border-bottom: 1px solid #343a40; }
+        .hero-section { background-color: #212529 !important; padding: 50px 0; border-bottom: 1px solid #343a40; }
         .hero-row { display: flex; flex-wrap: wrap; align-items: center; }
         .hero-col-left { flex: 1; min-width: 300px; padding: 20px; }
         .hero-col-right { flex: 0 0 300px; text-align: center; padding: 20px; margin: 0 auto; }
-        .hero-section h1 { font-size: 2.5rem; font-weight: bold; margin-bottom: 15px; color: #ffffff; }
-        .hero-section p { font-size: 1.2rem; color: #aaa; margin-bottom: 25px; }
+        .hero-section h1 { font-size: 2.5rem; font-weight: bold; margin-bottom: 15px; color: #ffffff !important; }
+        .hero-section p { font-size: 1.2rem; color: #bcc2c8 !important; margin-bottom: 25px; }
         
-        /* Grote Blauwe Knop */
-        .btn-fb {
+        /* Grote Blauwe Knop met witte tekst */
+        .btn-fb, .btn-fb:visited {
             display: inline-block;
-            background-color: #0d6efd;
-            color: white;
+            background-color: #0d6efd !important;
+            color: #ffffff !important;
             font-weight: bold;
             padding: 12px 30px;
             font-size: 1.2rem;
             border-radius: 5px;
-            text-decoration: none;
+            text-decoration: none !important;
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
-        .btn-fb:hover { background-color: #0b5ed7; color: white; text-decoration: none; }
+        .btn-fb:hover { background-color: #0b5ed7 !important; color: #ffffff !important; }
 
-        /* Mascotte-afbeelding hersteld */
+        /* Mascotte met felle groene rand */
         .mascotte-img { width: 200px; height: 200px; border-radius: 50%; border: 4px solid #25d366; background-color: white; object-fit: cover; }
-        .mascotte-text { color: #25d366; font-weight: bold; margin-top: 10px; font-size: 0.9rem; }
+        .mascotte-text { color: #25d366 !important; font-weight: bold; margin-top: 10px; font-size: 0.9rem; }
 
         /* Facebook-feed sectie */
         .feed-section { text-align: center; margin: 50px 0; }
-        .feed-section h2 { color: #25d366; font-weight: bold; margin-bottom: 25px; font-size: 2rem; }
-        .fb-container { background: #212529; border-radius: 8px; padding: 20px; border: 1px solid #25d366; display: inline-block; max-width: 100%; }
-
-        /* Contactformulier */
-        .contact-section { margin: 50px 0; }
-        .contact-section h2 { text-align: center; color: #25d366; font-weight: bold; margin-bottom: 25px; font-size: 2rem; }
-        .contact-card { background-color: #212529; border: 1px solid #343a40; border-radius: 8px; padding: 30px; max-width: 500px; margin: 0 auto; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #f8f9fa; }
-        .form-control { width: 100%; padding: 10px; background-color: #1a1d20; border: 1px solid #343a40; border-radius: 5px; color: white; font-size: 1rem; }
-        .form-control:focus { border-color: #25d366; outline: none; }
+        .feed-section h2 { color: #25d366 !important; font-weight: bold; margin-bottom: 25px; font-size: 2rem; }
+        .fb-container { background: #212529 !important; border-radius: 8px; padding: 20px; border: 1px solid #25d366; display: inline-block; max-width: 100%; }
         
+        /* Gecorrigeerde link onder de Facebook box om paars te voorkomen */
+        .fb-container a, .fb-container a:visited { color: #25d366 !important; text-decoration: none !important; font-weight: bold; }
+
+        /* Contactformulier met goed leesbare witte tekstlabels */
+        .contact-section { margin: 50px 0; }
+        .contact-section h2 { text-align: center; color: #25d366 !important; font-weight: bold; margin-bottom: 25px; font-size: 2rem; }
+        .contact-card { background-color: #212529 !important; border: 1px solid #343a40; border-radius: 8px; padding: 30px; max-width: 500px; margin: 0 auto; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #ffffff !important; }
+        
+        /* Herstelde invoervelden - Witte tekst op donkere achtergrond */
+        .form-control { 
+            width: 100%; 
+            padding: 12px; 
+            background-color: #1a1d20 !important; 
+            border: 1px solid #495057 !important; 
+            border-radius: 5px; 
+            color: #ffffff !important; 
+            font-size: 1rem; 
+        }
+        .form-control:focus { border-color: #25d366 !important; outline: none; }
+        
+        /* Formulier knop */
         .btn-submit {
             width: 100%;
-            background-color: #25d366;
-            color: #111111;
+            background-color: #25d366 !important;
+            color: #111111 !important;
             font-weight: bold;
             padding: 12px;
             font-size: 1.1rem;
@@ -84,10 +114,10 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .btn-submit:hover { background-color: #20b855; }
+        .btn-submit:hover { background-color: #20b855 !important; }
 
         /* Footer */
-        footer { background-color: #212529; text-align: center; padding: 20px 0; margin-top: auto; border-top: 1px solid #343a40; color: #aaa; }
+        footer { background-color: #212529 !important; text-align: center; padding: 20px 0; margin-top: auto; border-top: 1px solid #343a40; color: #aaa !important; }
     </style>
 </head>
 <body>
@@ -96,7 +126,7 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://facebook.net"></script>
 
-    <!-- Navigatiebalk -->
+    <!-- Gecorrigeerde Navigatiebalk -->
     <nav class="custom-nav">
         <div class="container">
             <div class="nav-content">
@@ -111,7 +141,7 @@
 
     <!-- Breaking News Balk -->
     <div class="ticker-wrapper">
-        <div class="ticker-text">⚠️ BREAKING NEWS: Volg Aardbol Nieuws nu ook live via onze officiële Facebook-pagina voor snelle updates! ---</div>
+        <div class="ticker-text">⚠️ BREAKING NEWS: Volg Aardbol Nieuws nu ook live via onze offiziële Facebook-pagina voor snelle updates! ---</div>
     </div>
 
     <!-- Welkomstsectie -->
@@ -124,7 +154,6 @@
                     <a href="https://facebook.com" target="_blank" class="btn-fb">Bezoek onze Facebook</a>
                 </div>
                 <div class="hero-col-right">
-                    <!-- Je echte mascotte direct geladen -->
                     <img src="https://postimg.co" alt="Aardbol Nieuws Mascotte" class="mascotte-img">
                     <div class="mascotte-text">Onze Officiële Mascotte! 🌍✨</div>
                 </div>
