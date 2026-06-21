@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aardbol Nieuws - Het Laatste Wereldnieuws</title>
-    <!-- Bootstrap CSS Link -->
+    <!-- Gecorrigeerde Bootstrap CSS Link -->
     <link href="https://jsdelivr.net" rel="stylesheet">
-    <!-- Bootstrap Icons Link -->
+    <!-- Gecorrigeerde Bootstrap Icons Link -->
     <link href="https://jsdelivr.net" rel="stylesheet">
     <style>
         .carousel-item {
@@ -41,12 +41,12 @@
             0% { transform: translate3d(0, 0, 0); }
             100% { transform: translate3d(-100%, 0, 0); }
         }
-        /* Stijl voor de mascotte-animatie */
         .mascotte-img {
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .mascotte-img:hover {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.08) rotate(3deg);
+            box-shadow: 0 10px 20px rgba(25, 135, 84, 0.4) !important;
         }
     </style>
 </head>
@@ -74,31 +74,30 @@
     <!-- Breaking News Balk -->
     <div class="ticker-wrapper shadow-sm">
         <div class="ticker-text">
-            ⚠️ BREAKING NEWS: Klimaatwetenschappers melden versnelde terugkeer van El Niño met directe wereldwijde impact --- Astronomische ontdekking geeft Formatting nieuwe hoop voor overleving van de aarde bij afsterven zon --- Ariane 6 vestigt nieuw Europees record met succesvolle lancering van 36 Amazon-satellieten ---
+            ⚠️ BREAKING NEWS: Klimaatwetenschappers melden versnelde terugkeer van El Niño met directe wereldwijde impact --- Astronomische ontdekking geeft nieuwe hoop voor overleving van de aarde bij afsterven zon --- Ariane 6 vestigt nieuw Europees record met succesvolle lancering van 36 Amazon-satellieten ---
         </div>
     </div>
 
-    <!-- Welkomstsectie (Hero) met Mascotte -->
+    <!-- Welkomstsectie met herstelde styling -->
     <div class="bg-body-tertiary p-5 border-bottom border-secondary shadow-sm">
         <div class="container">
             <div class="row align-items-center text-center text-md-start">
                 <div class="col-md-8 py-2">
                     <h1 class="display-4 fw-bold text-light">Blijf op de hoogte met Aardbol Nieuws</h1>
-                    <p class="lead text-muted">Uw dagelijkse premium bron voor het belangrijkste nieuws over onze planeet, wetenschap en natuur.</p>
-                    <a href="#hoofdnieuws" class="btn btn-success btn-lg px-4 gap-3 fw-bold me-2">Lees Hoofdnieuws</a>
-                    <!-- Jouw Facebook Link hier direct gekoppeld -->
-                    <a href="https://www.facebook.com/share/1BHuFT8Muc/" target="_blank" class="btn btn-outline-primary btn-lg px-4 fw-bold"><i class="bi bi-facebook me-2"></i>Volg ons op Facebook</a>
+                    <p class="lead text-muted">Uw dagelijkse premium bron voor het belangrijkste nieuws over onze planeet, wetenschap en natuur met een Surinaams hart.</p>
+                    <a href="#hoofdnieuws" class="btn btn-success btn-lg px-4 gap-3 fw-bold me-2 mb-2">Lees Hoofdnieuws</a>
+                    <a href="https://facebook.com" target="_blank" class="btn btn-outline-primary btn-lg px-4 fw-bold mb-2"><i class="bi bi-facebook me-2"></i>Volg ons op Facebook</a>
                 </div>
-                <!-- Mascotte Plek (vervang de link tussen de src='' later door je eigen mascotte-afbeelding) -->
+                <!-- Mascotte Plek -->
                 <div class="col-md-4 text-center py-2">
-                    <img src="https://placehold.co" alt="Aardbol Nieuws Mascotte" class="rounded-circle shadow border border-success border-3 mascotte-img" width="180" height="180">
-                    <div class="mt-2 text-success fw-bold small">Onze Mascotte! 🌍✨</div>
+                    <img src="mascotte.png" alt="Aardbol Nieuws Mascotte" class="rounded-circle shadow border border-success border-3 mascotte-img bg-white" width="200" height="200">
+                    <div class="mt-2 text-success fw-bold small">Onze Officiële Mascotte! 🌍✨</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Sectie: Afbeeldingen-slider (Hoofdnieuws) -->
+    <!-- Sectie: Hoofdnieuws -->
     <div class="container my-5 py-2" id="hoofdnieuws">
         <h2 class="text-center mb-4 fw-bold text-success">🔥 Belangrijkste Nieuwskoppen</h2>
         <div id="projectenCarousel" class="carousel slide shadow rounded overflow-hidden" data-bs-ride="carousel">
@@ -119,7 +118,7 @@
                     <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5 position-relative carousel-caption">
                         <span class="badge bg-warning text-dark mb-3 px-3 py-2 fs-6">RUIMTEVAART</span>
                         <h3 class="display-6 fw-bold">Ariane 6 vestigt zwaar Europees gewichtsrecord</h3>
-                        <p class="lead text-light">De nieuwe Europese draagraket heeft succesvol 36 zware Amazon Leo-satellieten tegelijk in een stabile baan gebracht.</p>
+                        <p class="lead text-light">De nieuwe Europese draagraket heeft succesvol 36 zware Amazon Leo-satellieten tegelijk in een stabiele baan gebracht.</p>
                     </div>
                 </div>
                 <div class="carousel-item" style="background-image: url('https://unsplash.com');">
@@ -139,11 +138,10 @@
         </div>
     </div>
 
-    <!-- SECTIE: Nieuwsberichten (Jouw artikelen) -->
+    <!-- SECTIE: Nieuwsberichten -->
     <div class="container my-5 py-4" id="laatste-nieuws">
         <h2 class="text-center mb-4 fw-bold text-success">📰 Laatste Nieuwsberichten</h2>
         <div class="row">
-            <!-- Artikel 1 -->
             <div class="col-md-6 mb-4">
                 <div class="card h-100 bg-body-tertiary border-secondary shadow-sm">
                     <div class="card-body">
@@ -153,11 +151,9 @@
                         </div>
                         <h4 class="card-title fw-bold">Nieuw herbossingsproject gestart in het Amazonegebied</h4>
                         <p class="card-text text-secondary">Een internationaal collectief is begonnen met het planten van miljoenen inheemse bomen om aangetaste ecosystemen versneld te herstellen.</p>
-                        <a href="#" class="btn btn-sm btn-outline-success">Lees meer</a>
                     </div>
                 </div>
             </div>
-            <!-- Artikel 2 -->
             <div class="col-md-6 mb-4">
                 <div class="card h-100 bg-body-tertiary border-secondary shadow-sm">
                     <div class="card-body">
@@ -165,3 +161,4 @@
                             <span class="text-success small fw-bold">Technologie</span>
                             <span class="text-muted small">20 juni 2026</span>
                         </div>
+                        <h4 class="card-title fw-bold">Nieuw type zonnepaneel breekt efficiëntie-record</h4>
