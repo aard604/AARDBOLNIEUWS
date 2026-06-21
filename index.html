@@ -4,49 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aardbol Nieuws - Het Laatste Wereldnieuws</title>
-    <!-- Gecorrigeerde officiële CDN links voor Bootstrap -->
+    <!-- Officiële CDN links voor Bootstrap -->
     <link href="https://jsdelivr.net" rel="stylesheet">
     <link href="https://jsdelivr.net" rel="stylesheet">
     <style>
-        .carousel-item {
-            height: 400px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        .carousel-item::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-        }
-        .carousel-caption {
-            z-index: 2;
-        }
-        .ticker-wrapper {
-            background-color: #dc3545;
-            color: white;
-            overflow: hidden;
-            white-space: nowrap;
-            padding: 8px 0;
-            font-weight: bold;
-        }
-        .ticker-text {
-            display: inline-block;
-            animation: ticker 25s linear infinite;
-            padding-left: 100%;
-        }
-        @keyframes ticker {
-            0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(-100%, 0, 0); }
-        }
-        .mascotte-img {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .mascotte-img:hover {
-            transform: scale(1.08) rotate(3deg);
-            box-shadow: 0 10px 20px rgba(25, 135, 84, 0.4) !important;
-        }
+        .carousel-item { height: 400px; background-size: cover; background-position: center; position: relative; }
+        .carousel-item::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); }
+        .carousel-caption { z-index: 2; }
+        .ticker-wrapper { background-color: #dc3545; color: white; overflow: hidden; white-space: nowrap; padding: 8px 0; font-weight: bold; }
+        .ticker-text { display: inline-block; animation: ticker 25s linear infinite; padding-left: 100%; }
+        @keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
+        .mascotte-img { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .mascotte-img:hover { transform: scale(1.08) rotate(3deg); box-shadow: 0 10px 20px rgba(25, 135, 84, 0.4) !important; }
     </style>
 </head>
 <body class="d-flex flex-column min-vh-100 bg-dark text-light">
@@ -55,9 +24,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary sticky-top border-bottom border-secondary">
         <div class="container">
             <a class="navbar-brand fw-bold text-success" href="#">🌍 AARDBOL NIEUWS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#hoofdnieuws">Hoofdnieuws</a></li>
@@ -72,12 +39,10 @@
 
     <!-- Breaking News Balk -->
     <div class="ticker-wrapper shadow-sm">
-        <div class="ticker-text">
-            ⚠️ BREAKING NEWS: Klimaatwetenschappers melden versnelde terugkeer van El Niño met directe wereldwijde impact --- Astronomische ontdekking geeft nieuwe hoop voor overleving van de aarde bij afsterven zon --- Ariane 6 vestigt nieuw Europees record met succesvolle lancering van 36 Amazon-satellieten ---
-        </div>
+        <div class="ticker-text">⚠️ BREAKING NEWS: Volg Aardbol Nieuws nu ook live via onze officiële Facebook-pagina voor snelle updates! ---</div>
     </div>
 
-    <!-- Welkomstsectie -->
+    <!-- Welkomstsectie met Mascotte -->
     <div class="bg-body-tertiary p-5 border-bottom border-secondary shadow-sm">
         <div class="container">
             <div class="row align-items-center text-center text-md-start">
@@ -87,7 +52,6 @@
                     <a href="#hoofdnieuws" class="btn btn-success btn-lg px-4 gap-3 fw-bold me-2 mb-2">Lees Hoofdnieuws</a>
                     <a href="https://facebook.com" target="_blank" class="btn btn-outline-primary btn-lg px-4 fw-bold mb-2"><i class="bi bi-facebook me-2"></i>Volg ons op Facebook</a>
                 </div>
-                <!-- Echte mascotte via een directe live-link ingebouwd -->
                 <div class="col-md-4 text-center py-2">
                     <img src="https://ibb.co" alt="Aardbol Nieuws Mascotte" class="rounded-circle shadow border border-success border-3 mascotte-img bg-white" width="200" height="200">
                     <div class="mt-2 text-success fw-bold small">Onze Officiële Mascotte! 🌍✨</div>
@@ -96,68 +60,76 @@
         </div>
     </div>
 
-    <!-- Sectie: Hoofdnieuws -->
-    <div class="container my-5 py-2" id="hoofdnieuws">
-        <h2 class="text-center mb-4 fw-bold text-success">🔥 Belangrijkste Nieuwskoppen</h2>
-        <div id="projectenCarousel" class="carousel slide shadow rounded overflow-hidden" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#projectenCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#projectenCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#projectenCarousel" data-bs-slide-to="2"></button>
-            </div>
-            <div class="carousel-inner text-white text-center">
-                <div class="carousel-item active" style="background-image: url('https://unsplash.com');">
-                    <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5 position-relative carousel-caption">
-                        <span class="badge bg-danger mb-3 px-3 py-2 fs-6">WETENSCHAP</span>
-                        <h3 class="display-6 fw-bold">Aarde vergaat wellicht niet als de zon sterft</h3>
-                        <p class="lead text-light">Een nieuwe astronomische studie toont aan dat onze planeet de definitieve dood van de zon mogelijk overleeft.</p>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('https://unsplash.com');">
-                    <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5 position-relative carousel-caption">
-                        <span class="badge bg-warning text-dark mb-3 px-3 py-2 fs-6">RUIMTEVAART</span>
-                        <h3 class="display-6 fw-bold">Ariane 6 vestigt zwaar Europees gewichtsrecord</h3>
-                        <p class="lead text-light">De nieuwe Europese draagraket heeft succesvol 36 zware Amazon Leo-satellieten tegelijk in een stabiele baan gebracht.</p>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('https://unsplash.com');">
-                    <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5 position-relative carousel-caption">
-                        <span class="badge bg-info text-dark mb-3 px-3 py-2 fs-6">KLIMAAT</span>
-                        <h3 class="display-6 fw-bold">Klimaatfenomeen El Niño officieel teruggekeerd</h3>
-                        <p class="lead text-light">Nieuwe satellietmetingen bevestigen een snelle versterking van El Niño met directe wereldwijde gevolgen voor het weer.</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#projectenCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#projectenCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+    <!-- SECTIE: Live Nieuwsberichten -->
+    <div class="container my-5 py-4" id="laatste-nieuws">
+        <h2 class="text-center mb-4 fw-bold text-success">📰 Laatste Nieuwsberichten</h2>
+        <div class="row" id="news-container">
+            <!-- Berichten worden hier dadelijk automatisch ingeladen via het JSON bestand -->
+            <div class="text-center text-muted py-5" id="loading-text">Nieuwsberichten worden geladen...</div>
         </div>
     </div>
 
-    <!-- SECTIE: Nieuwsberichten -->
-    <div class="container my-5 py-4" id="laatste-nieuws">
-        <h2 class="text-center mb-4 fw-bold text-success">📰 Laatste Nieuwsberichten</h2>
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="card h-100 bg-body-tertiary border-secondary shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span class="text-success small fw-bold">Natuur & Milieu</span>
-                            <span class="text-muted small">21 juni 2026</span>
-                        </div>
-                        <h4 class="card-title fw-bold">Nieuw herbossingsproject gestart in het Amazonegebied</h4>
-                        <p class="card-text text-secondary">Een internationaal collectief is begonnen met het planten van miljoenen inheemse bomen om aangetaste ecosystemen versneld te herstellen.</p>
+    <!-- Contactformulier -->
+    <div class="container my-5 py-2 mb-5" id="contact">
+        <h2 class="text-center mb-4 fw-bold text-success">✍️ Tip de Redactie / Contact</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <form action="https://formspree.io" method="POST" class="card p-4 shadow-sm border-secondary bg-body-tertiary">
+                    <input type="hidden" name="_to" value="info.aardbolnieuws@gmail.com">
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Naam</label>
+                        <input type="text" name="naam" class="form-control bg-dark text-light border-secondary" placeholder="Jouw naam">
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">E-mailadres</label>
+                        <input type="email" name="_replyto" class="form-control bg-dark text-light border-secondary" placeholder="naam@voorbeeld.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Nieuwstip</label>
+                        <textarea name="bericht" class="form-control bg-dark text-light border-secondary" rows="4" placeholder="Deel hier uw nieuws..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100 fw-bold text-dark">Verstuur naar Redactie</button>
+                </form>
             </div>
-            <div class="col-md-6 mb-4">
-                <div class="card h-100 bg-body-tertiary border-secondary shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span class="text-success small fw-bold">Technologie</span>
-                            <span class="text-muted small">20 juni 2026</span>
-                        </div>
-                        <h4 class="card-title fw-bold">Nieuw type zonnepaneel breekt efficiëntie-record</h4>
+        </div>
+    </div>
+
+    <footer class="bg-body-tertiary text-white text-center py-4 mt-auto border-top border-secondary">
+        <div class="container">
+            <div class="mb-3">
+                <a href="https://facebook.com" target="_blank" class="text-primary mx-2 fs-4"><i class="bi bi-facebook"></i></a>
+            </div>
+            <p class="mb-2">&copy; 2026 Aardbol Nieuws. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <!-- Script om nieuws live in te laden vanuit nieuws.json -->
+    <script>
+        fetch('nieuws.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('news-container');
+                document.getElementById('loading-text').remove();
+                data.forEach(item => {
+                    const html = `
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 bg-body-tertiary border-secondary shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="text-success small fw-bold">${item.categorie}</span>
+                                        <span class="text-muted small">${item.datum}</span>
+                                    </div>
+                                    <h4 class="card-title fw-bold">${item.titel}</h4>
+                                    <p class="card-text text-secondary">${item.inhoud}</p>
+                                </div>
+                            </div>
+                        </div>`;
+                    container.innerHTML += html;
+                });
+            }).catch(err => {
+                document.getElementById('loading-text').innerText = "Kon nieuwsberichten niet laden.";
+            });
+    </script>
+    <script src="https://jsdelivr.net"></script>
+</body>
+</html>
