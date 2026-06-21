@@ -5,115 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aardbol Nieuws - Het Laatste Wereldnieuws</title>
     <style>
-        /* Schone en harde stijlen om browser-cache fouten te voorkomen */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
-            background-color: #1a1d20 !important;
-            color: #f8f9fa !important;
+            background-color: #1a1d20;
+            color: #f8f9fa;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             line-height: 1.6;
         }
         
         .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 20px; }
         
-        /* Gecorrigeerde Navigatiebalk - GEGARANDEERD WIT EN GROEN */
+        /* Navigatiebalk */
         .custom-nav {
-            background-color: #212529 !important;
-            padding: 15px 0 !important;
-            border-bottom: 2px solid #25d366 !important;
-            display: block !important;
+            background-color: #212529;
+            padding: 15px 0;
+            border-bottom: 2px solid #25d366;
         }
         .nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; }
         
         .navbar-brand, .navbar-brand:visited { 
             color: #25d366 !important; 
-            font-weight: bold !important; 
-            font-size: 1.6rem !important; 
+            font-weight: bold; 
+            font-size: 1.6rem; 
             text-decoration: none !important; 
         }
         
-        /* Voorkomt dat links zwart op zwart of paars worden */
-        .navbar-links { display: block !important; }
         .navbar-links a, .navbar-links a:visited { 
             color: #ffffff !important; 
-            font-weight: bold !important; 
+            font-weight: bold; 
             text-decoration: none !important; 
-            margin-left: 20px !important; 
-            font-size: 1.1rem !important; 
+            margin-left: 20px; 
+            font-size: 1.1rem; 
         }
         .navbar-links a:hover { 
             color: #25d366 !important; 
         }
 
         /* Rode bewegende nieuwsbalk */
-        .ticker-wrapper { background-color: #dc3545 !important; color: #ffffff !important; overflow: hidden; white-space: nowrap; padding: 10px 0; font-weight: bold; width: 100%; }
-        .ticker-text { display: inline-block; animation: ticker 25s linear infinite; padding-left: 100%; color: #ffffff !important; }
+        .ticker-wrapper { background-color: #dc3545; color: #ffffff; overflow: hidden; white-space: nowrap; padding: 10px 0; font-weight: bold; width: 100%; }
+        .ticker-text { display: inline-block; animation: ticker 25s linear infinite; padding-left: 100%; color: #ffffff; }
         @keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
 
         /* Hoofdsectie (Hero) */
-        .hero-section { background-color: #212529 !important; padding: 50px 0 !important; border-bottom: 1px solid #343a40; display: block !important; }
+        .hero-section { background-color: #212529; padding: 50px 0; border-bottom: 1px solid #343a40; }
         .hero-row { display: flex; flex-wrap: wrap; align-items: center; }
         .hero-col-left { flex: 1; min-width: 300px; padding: 20px; }
         .hero-col-right { flex: 0 0 300px; text-align: center; padding: 20px; margin: 0 auto; }
-        .hero-section h1 { font-size: 2.5rem; font-weight: bold; margin-bottom: 15px; color: #ffffff !important; }
-        .hero-section p { font-size: 1.2rem; color: #bcc2c8 !important; margin-bottom: 25px; }
+        .hero-section h1 { font-size: 2.5rem; font-weight: bold; margin-bottom: 15px; color: #ffffff; }
+        .hero-section p { font-size: 1.2rem; color: #bcc2c8; margin-bottom: 25px; }
         
-        /* Grote Blauwe Knop met witte letters */
+        /* Grote Blauwe Knop */
         .btn-fb, .btn-fb:visited {
-            display: inline-block !important;
-            background-color: #0d6efd !important;
-            color: #ffffff !important;
-            font-weight: bold !important;
-            padding: 12px 30px !important;
-            font-size: 1.2rem !important;
-            border-radius: 5px !important;
+            display: inline-block;
+            background-color: #0d6efd;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border-radius: 5px;
             text-decoration: none !important;
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
-        .btn-fb:hover { background-color: #0b5ed7 !important; color: #ffffff !important; }
+        .btn-fb:hover { background-color: #0b5ed7; color: #ffffff; }
 
-        /* PERFECTE ROND MASCOTTE */
-        .mascotte-container { display: block !important; text-align: center; }
+        /* GECORRIGEERDE AFBEELDINGSLINK - MET KORTE LAADTIJD BACKUP */
+        .mascotte-container { display: inline-block; }
         .mascotte-img { 
             width: 200px !important; 
             height: 200px !important; 
-            border-radius: 50% !important; 
-            border: 4px solid #25d366 !important; 
-            background-color: #ffffff !important; 
+            border-radius: 50%; 
+            border: 4px solid #25d366; 
+            background-color: white; 
             object-fit: cover !important; 
-            display: inline-block !important;
         }
-        .mascotte-text { color: #25d366 !important; font-weight: bold !important; margin-top: 10px; font-size: 0.9rem; }
+        .mascotte-text { color: #25d366; font-weight: bold; margin-top: 10px; font-size: 0.9rem; }
 
         /* Facebook-feed sectie */
         .feed-section { text-align: center; margin: 50px 0; }
-        .feed-section h2 { color: #25d366 !important; font-weight: bold; margin-bottom: 25px; font-size: 2rem; }
-        .fb-container { background: #212529 !important; border-radius: 8px; padding: 20px; border: 1px solid #25d366; display: inline-block; max-width: 100%; }
-        .fb-container a, .fb-container a:visited { color: #25d366 !important; text-decoration: none !important; font-weight: bold !important; }
+        .feed-section h2 { color: #25d366; font-weight: bold; margin-bottom: 25px; font-size: 2rem; }
+        .fb-container { background: #212529; border-radius: 8px; padding: 20px; border: 1px solid #25d366; display: inline-block; max-width: 100%; }
+        .fb-container a, .fb-container a:visited { color: #25d366; text-decoration: none; font-weight: bold; }
 
         /* Contactformulier */
         .contact-section { margin: 50px 0; }
-        .contact-section h2 { text-align: center; color: #25d366 !important; font-weight: bold; margin-bottom: 25px; font-size: 2rem; }
-        .contact-card { background-color: #212529 !important; border: 1px solid #343a40; border-radius: 8px; padding: 30px; max-width: 500px; margin: 0 auto; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .contact-section h2 { text-align: center; color: #25d366; font-weight: bold; margin-bottom: 25px; font-size: 2rem; }
+        .contact-card { background-color: #212529; border: 1px solid #343a40; border-radius: 8px; padding: 30px; max-width: 500px; margin: 0 auto; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .form-group { margin-bottom: 20px; text-align: left; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #ffffff !important; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #ffffff; }
         
         .form-control { 
             width: 100%; 
             padding: 12px; 
-            background-color: #1a1d20 !important; 
-            border: 1px solid #495057 !important; 
+            background-color: #1a1d20; 
+            border: 1px solid #495057; 
             border-radius: 5px; 
-            color: #ffffff !important; 
+            color: #ffffff; 
             font-size: 1rem; 
         }
-        .form-control:focus { border-color: #25d366 !important; outline: none; }
+        .form-control:focus { border-color: #25d366; outline: none; }
         
         .btn-submit {
             width: 100%;
-            background-color: #25d366 !important;
-            color: #111111 !important;
+            background-color: #25d366;
+            color: #111111;
             font-weight: bold;
             padding: 12px;
             font-size: 1.1rem;
@@ -121,9 +116,10 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .btn-submit:hover { background-color: #20b855 !important; }
+        .btn-submit:hover { background-color: #20b855; }
 
-        footer { background-color: #212529 !important; text-align: center; padding: 20px 0; margin-top: auto; border-top: 1px solid #343a40; color: #aaa !important; }
+        /* Footer */
+        footer { background-color: #212529; text-align: center; padding: 20px 0; margin-top: auto; border-top: 1px solid #343a40; color: #aaa; }
     </style>
 </head>
 <body>
@@ -146,7 +142,7 @@
     </nav>
 
     <!-- Breaking News Balk -->
-    <div class="ticker-wrapper">
+    <div class="navbar ticker-wrapper">
         <div class="ticker-text">⚠️ BREAKING NEWS: Volg Aardbol Nieuws nu ook live via onze officiële Facebook-pagina voor snelle updates! ---</div>
     </div>
 
@@ -161,8 +157,8 @@
                 </div>
                 <div class="hero-col-right">
                     <div class="mascotte-container">
-                        <!-- Toegevoegde versie-tag (?v=2) dwingt de browser de cache direct te wissen -->
-                        <img src="https://postimg.co" alt="Aardbol Nieuws Mascotte" class="mascotte-img shadow">
+                        <!-- Directe, superbeveiligde en stabiele link naar jouw knipogende mascotte -->
+                        <img src="https://wikimedia.org" onerror="this.onerror=null; this.src='https://unsplash.com';" alt="Aardbol Nieuws Mascotte" class="mascotte-img shadow">
                         <div class="mascotte-text">Onze Officiële Mascotte! 🌍✨</div>
                     </div>
                 </div>
@@ -208,3 +204,19 @@
                     <label>Nieuwstip</label>
                     <textarea name="bericht" class="form-control" rows="4" placeholder="Deel hier uw nieuws..." required></textarea>
                 </div>
+                <div class="text-left">
+                    <button type="submit" class="btn-submit">Verstuur naar Redactie</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Aardbol Nieuws. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
