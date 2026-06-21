@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aardbol Nieuws - Het Laatste Wereldnieuws</title>
     <style>
-        /* Onbreekbare handmatige styling - Geen externe links die kunnen mislukken */
+        /* Onbreekbare handmatige styling */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
@@ -17,7 +17,7 @@
         
         .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 20px; }
         
-        /* Gecorrigeerde Navigatiebalk */
+        /* Navigatiebalk */
         .custom-nav {
             background-color: #212529;
             padding: 15px 0;
@@ -52,7 +52,7 @@
         .hero-section { background-color: #212529; padding: 50px 0; border-bottom: 1px solid #343a40; }
         .hero-row { display: flex; flex-wrap: wrap; align-items: center; }
         .hero-col-left { flex: 1; min-width: 300px; padding: 20px; }
-        .hero-col-right { flex: 0 0 300px; text-align: center; padding: 20px; margin: 0 auto; }
+        .hero-col-right { flex: 0 0 320px; text-align: center; padding: 20px; margin: 0 auto; }
         .hero-section h1 { font-size: 2.5rem; font-weight: bold; margin-bottom: 15px; color: #ffffff; }
         .hero-section p { font-size: 1.2rem; color: #bcc2c8; margin-bottom: 25px; }
         
@@ -70,27 +70,25 @@
         }
         .btn-fb:hover { background-color: #0b5ed7; color: #ffffff; }
 
-        /* NIEUWE DIGITALE MASCOTTE-BOX (KAN NOOIT BREKEN OF WIT WORDEN) */
-        .mascotte-badge {
-            width: 180px;
-            height: 180px;
-            background-color: #1a1d20;
-            border: 5px solid #25d366;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        /* VASTGEZETTE MAAT EN OPMAAK VOOR JOUW ORIGINELE MASCOTTE */
+        .mascotte-container { display: inline-block; }
+        .mascotte-img { 
+            width: 240px !important; 
+            height: 240px !important; 
+            border-radius: 50% !important; 
+            border: 5px solid #25d366 !important; 
+            background-color: white !important; 
+            object-fit: cover !important; 
+            display: block;
         }
-        .mascotte-text { color: #25d366; font-weight: bold; margin-top: 15px; font-size: 1rem; }
+        .mascotte-text { color: #25d366; font-weight: bold; margin-top: 10px; font-size: 1.1rem; }
 
         /* ITEMS EN FOTO LAYOUT SECTIE */
         .items-section { padding: 50px 0; text-align: center; }
         .items-section h2 { color: #25d366; font-size: 2rem; margin-bottom: 30px; font-weight: bold; }
         .items-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
         .item-card { background-color: #212529; border: 1px solid #343a40; border-radius: 8px; overflow: hidden; width: 100%; max-width: 350px; text-align: left; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-        .item-img-placeholder { width: 100%; height: 200px; background-color: #1a1d20; display: flex; align-items: center; justify-content: center; font-size: 4rem; border-bottom: 1px solid #343a40; }
+        .item-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #343a40; }
         .item-body { padding: 20px; }
         .item-title { font-size: 1.3rem; font-weight: bold; color: #ffffff; margin-bottom: 10px; }
         .item-text { color: #bcc2c8; font-size: 0.95rem; }
@@ -138,7 +136,7 @@
             <div class="nav-content">
                 <a class="navbar-brand" href="#">🌍 AARDBOL NIEUWS</a>
                 <div class="navbar-links">
-                    <a href="#items">Nieuws & Artikelen</a>
+                    <a href="#items">Nieuws & Foto's</a>
                     <a href="#contact">Contact</a>
                 </div>
             </div>
@@ -161,23 +159,23 @@
                 </div>
                 <div class="hero-col-right">
                     <div class="mascotte-container">
-                        <!-- Ingebouwde digitale wereldbol badge die NOOIT kan breken -->
-                        <div class="mascotte-badge">🌍</div>
-                        <div class="mascotte-text">Aardbol Nieuws Live 🌍✨</div>
+                        <!-- JOUW EIGEN MASCOTTE RECHTSTREEKS ALS INGEBAKKEN LIVE AFBEELDING -->
+                        <img src="https://ibb.co" alt="Aardbol Nieuws Mascotte" class="mascotte-img shadow">
+                        <div class="mascotte-text">Onze Officiële Mascotte! 🌍✨</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- NIEUWS & ARTIKELEN SECTIE -->
+    <!-- NIEUWS & FOTO SECTIE -->
     <div class="container items-section" id="items">
-        <h2>📰 Laatste Nieuwsberichten</h2>
+        <h2>📰 Laatste Items & Artikelen</h2>
         <div class="items-grid">
             
             <!-- ITEM 1 -->
             <div class="item-card">
-                <div class="item-img-placeholder">🚀</div>
+                <img src="https://unsplash.com" alt="Nieuws item 1" class="item-img">
                 <div class="item-body">
                     <div class="item-title">Ruimte & Wetenschap</div>
                     <div class="item-text">Nieuwe astronomische ontdekkingen werpen een frisse en hoopvolle blik op de verre toekomst van onze planeet Aarde.</div>
@@ -186,7 +184,7 @@
 
             <!-- ITEM 2 -->
             <div class="item-card">
-                <div class="item-img-placeholder">☀️</div>
+                <img src="https://unsplash.com" alt="Nieuws item 2" class="item-img">
                 <div class="item-body">
                     <div class="item-title">Wereldwijd Klimaat</div>
                     <div class="item-text">Weersatellieten houden de patronen nauwkeurig in de gaten om sneller te waarschuwen bij extreme weersomstandigheden.</div>
@@ -195,10 +193,10 @@
 
             <!-- ITEM 3 -->
             <div class="item-card">
-                <div class="item-img-placeholder">💻</div>
+                <img src="https://unsplash.com" alt="Nieuws item 3" class="item-img">
                 <div class="item-body">
                     <div class="item-title">Surinaamse Innovatie</div>
-                    <div class="item-text">Aardbol Nieuws breidt uit met een gloednieuwe indeling voor de allernieuwste updates over IT, natuur en wereldnieuws.</div>
+                    <div class="item-text">Aardbol Nieuws breidt uit met een gloednieuwe fotogalerij voor de allernieuwste updates over IT, natuur en wereldnieuws.</div>
                 </div>
             </div>
 
@@ -218,6 +216,3 @@
                 <div class="form-group">
                     <label>E-mailadres</label>
                     <input type="email" name="_replyto" class="form-control" placeholder="naam@voorbeeld.com" required>
-                </div>
-                <div class="form-group">
-                    <label>Nieuwstip</label>
