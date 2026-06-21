@@ -1,25 +1,39 @@
 <!DOCTYPE html>
-<html lang="nl" data-bs-theme="dark">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aardbol Nieuws - Het Laatste Wereldnieuws</title>
-    <!-- Officiële CDN links voor Bootstrap -->
-    <link href="https://jsdelivr.net" rel="stylesheet">
-    <link href="https://jsdelivr.net" rel="stylesheet">
+    <!-- Officiële en stabiele Bootstrap CDN links -->
+    <link href="https://jsdelivr.net" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://jsdelivr.net" rel="stylesheet" crossorigin="anonymous">
     <style>
-        .ticker-wrapper { background-color: #dc3545; color: white; overflow: hidden; white-space: nowrap; padding: 8px 0; font-weight: bold; }
+        /* Extreem duidelijke en felle styling voor de zwarte balk */
+        .custom-nav { 
+            background-color: #111111 !important; 
+            padding: 15px 0 !important;
+        }
+        .custom-nav .navbar-brand { 
+            color: #25d366 !important; 
+            font-weight: 900 !important; 
+            font-size: 1.6rem !important;
+        }
+        .custom-nav .nav-link { 
+            color: #ffffff !important; 
+            font-weight: 800 !important; 
+            font-size: 1.2rem !important;
+            text-transform: uppercase;
+        }
+        .custom-nav .nav-link:hover { 
+            color: #25d366 !important; 
+        }
+        /* Breaking news animatie */
+        .ticker-wrapper { background-color: #dc3545; color: white; overflow: hidden; white-space: nowrap; padding: 10px 0; font-weight: bold; }
         .ticker-text { display: inline-block; animation: ticker 25s linear infinite; padding-left: 100%; }
         @keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
-        .mascotte-img { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .mascotte-img:hover { transform: scale(1.08) rotate(3deg); box-shadow: 0 10px 20px rgba(25, 135, 84, 0.4) !important; }
-        .fb-container { background: #212529; border-radius: 8px; padding: 15px; border: 1px solid #373b3e; }
-        
-        /* Herstelde styling voor de navigatiebalk lezers */
-        .custom-nav { background-color: #1a1d20 !important; }
-        .custom-nav .navbar-brand { color: #198754 !important; font-weight: bold; }
-        .custom-nav .nav-link { color: #f8f9fa !important; font-weight: 500; }
-        .custom-nav .nav-link:hover { color: #198754 !important; }
+        /* Mascotte effecten */
+        .mascotte-img { transition: transform 0.3s ease; max-width: 100%; height: auto; }
+        .mascotte-img:hover { transform: scale(1.08) rotate(3deg); }
     </style>
 </head>
 <body class="d-flex flex-column min-vh-100 bg-dark text-light">
@@ -28,10 +42,10 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://facebook.net"></script>
 
-    <!-- Gecorrigeerde en Goed Leesbare Navigatiebalk -->
-    <nav class="navbar navbar-expand-lg navbar-dark custom-nav sticky-top border-bottom border-secondary shadow-sm">
+    <!-- Super Goed Leesbare Navigatiebalk -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-nav sticky-top border-bottom border-success shadow">
         <div class="container">
-            <a class="navbar-brand fs-4" href="#">🌍 AARDBOL NIEUWS</a>
+            <a class="navbar-brand" href="#">🌍 AARDBOL NIEUWS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -49,29 +63,30 @@
         <div class="ticker-text">⚠️ BREAKING NEWS: Volg Aardbol Nieuws nu ook live via onze officiële Facebook-pagina voor snelle updates! ---</div>
     </div>
 
-    <!-- Welkomstsectie met Mascotte -->
-    <div class="bg-body-tertiary p-5 border-bottom border-secondary shadow-sm">
+    <!-- Welkomstsectie met je Echte Knipogende Mascotte -->
+    <div class="p-5 border-bottom border-secondary shadow-sm" style="background-color: #1f2327;">
         <div class="container">
             <div class="row align-items-center text-center text-md-start">
                 <div class="col-md-8 py-2">
                     <h1 class="display-4 fw-bold text-light">Blijf op de hoogte met Aardbol Nieuws</h1>
-                    <p class="lead text-muted">Uw dagelijkse premium bron voor het belangrijkste nieuws over onze planeet, wetenschap en natuur met een Surinaams hart.</p>
-                    <a href="https://facebook.com" target="_blank" class="btn btn-primary btn-lg px-4 fw-bold mb-2"><i class="bi bi-facebook me-2"></i>Bezoek onze Facebook</a>
+                    <p class="lead text-light opacity-75">Uw dagelijkse premium bron voor het belangrijkste nieuws over onze planeet, wetenschap en natuur met een Surinaams hart.</p>
+                    <a href="https://facebook.com" target="_blank" class="btn btn-primary btn-lg px-4 fw-bold shadow"><i class="bi bi-facebook me-2"></i>Bezoek onze Facebook</a>
                 </div>
+                <!-- Je echte mascotte direct vanaf een stabiele server geladen -->
                 <div class="col-md-4 text-center py-2">
-                    <img src="https://ibb.co" alt="Aardbol Nieuws Mascotte" class="rounded-circle shadow border border-success border-3 mascotte-img bg-white" width="200" height="200">
-                    <div class="mt-2 text-success fw-bold small">Onze Officiële Mascotte! 🌍✨</div>
+                    <img src="https://postimg.co" alt="Aardbol Nieuws Mascotte" class="rounded-circle shadow border border-success border-4 mascotte-img bg-white" width="220" height="220">
+                    <div class="mt-2 text-success fw-bold">Onze Officiële Mascotte! 🌍✨</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- SECTIE: Live Facebook Nieuws Feed -->
+    <!-- Live Facebook Nieuws Feed -->
     <div class="container my-5 py-4" id="hoofdnieuws">
         <h2 class="text-center mb-4 fw-bold text-success">📰 Ons Laatste Nieuwsonline</h2>
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
-                <div class="fb-container shadow">
+                <div style="background: #111111; border-radius: 8px; padding: 15px; border: 1px solid #25d366;" class="shadow">
                     <div class="fb-page" 
                         data-href="https://facebook.com" 
                         data-tabs="timeline" 
@@ -95,7 +110,7 @@
         <h2 class="text-center mb-4 fw-bold text-success">✍️ Tip de Redactie / Contact</h2>
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
-                <form action="https://formspree.io" method="POST" class="card p-4 shadow-sm border-secondary bg-body-tertiary">
+                <form action="https://formspree.io" method="POST" class="card p-4 shadow border-secondary" style="background-color: #1f2327;">
                     <input type="hidden" name="_to" value="info.aardbolnieuws@gmail.com">
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Naam</label>
@@ -115,12 +130,12 @@
         </div>
     </div>
 
-    <footer class="bg-body-tertiary text-white text-center py-4 mt-auto border-top border-secondary">
+    <footer class="text-white text-center py-4 mt-auto border-top border-secondary" style="background-color: #111111;">
         <div class="container">
             <p class="mb-0">&copy; 2026 Aardbol Nieuws. Alle rechten voorbehouden.</p>
         </div>
     </footer>
 
-    <script src="https://jsdelivr.net"></script>
+    <script src="https://jsdelivr.net" crossorigin="anonymous"></script>
 </body>
 </html>
